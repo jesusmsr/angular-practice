@@ -1,1 +1,1 @@
-"# angular-practice" 
+This repo contains a series of folders, each with an Angular project on different versions starting at version 15. I wanted to practice the most important features of each update from version 15 so I created this. These projects are just for testing the new functionalities so don't expect anything fancy
