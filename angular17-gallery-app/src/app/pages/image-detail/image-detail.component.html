@@ -1,0 +1,10 @@
+<a routerLink="/gallery">← Volver</a>
+
+<div *ngIf="image; else notFound">
+  <h2>{{ image.title }}</h2>
+  <img [src]="image.url" width="600" height="400" />
+</div>
+
+<ng-template #notFound>
+  <p>Imagen no encontrada.</p>
+</ng-template>

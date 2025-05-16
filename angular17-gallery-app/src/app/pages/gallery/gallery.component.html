@@ -1,0 +1,27 @@
+<h2>Galería de Imágenes</h2>
+
+<label>Filtrar por categoría:</label>
+<select [(ngModel)]="selectedCategory">
+  <option value="all">Todas</option>
+  <option value="paisaje">Paisajes</option>
+  <option value="animales">Animales</option>
+  <option value="tecnología">Tecnología</option>
+</select>
+
+<hr />
+
+@for (image of filterImages(); track image.id) {
+<div style="margin-bottom: 1rem">
+  <h3>{{ image.title }}</h3>
+
+  @defer (when true) {
+  <img [src]="image.url" width="300" height="200" />
+  } @placeholder {
+  <p>Cargando imagen...</p>
+  }
+
+  <p><a [routerLink]="['/gallery', image.id]">Ver detalle</a></p>
+</div>
+} @empty {
+<p>No hay imágenes en esta categoría.</p>
+}
